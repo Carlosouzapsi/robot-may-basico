@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on darwin)" generated="20230421 13:31:00.548" rpa="false" schemaversion="3">
+<suite id="s1" name="Api Testing Usuarios" source="/Users/vntcaot/Documents/robot-framework/api_testing/tests/api_testing_usuarios.robot">
+<test id="s1-t1" name="Cenário 01: Cadastrar um novo usuário com sucesso na ServeRest" line="7">
+<kw name="Criar um usuário novo" library="api_testing_usuarios">
+<kw name="Generate Random String" library="String">
+<var>${palavra_aleatoria}</var>
+<arg>length=4</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230421 13:31:00.643" level="INFO">${palavra_aleatoria} = ZgOY</msg>
+<status status="PASS" starttime="20230421 13:31:00.643" endtime="20230421 13:31:00.644"/>
+</kw>
+<kw name="Convert To Lower Case" library="String">
+<var>${palavra_aleatoria}</var>
+<arg>${palavra_aleatoria}</arg>
+<doc>Converts string to lower case.</doc>
+<msg timestamp="20230421 13:31:00.645" level="INFO">${palavra_aleatoria} = zgoy</msg>
+<status status="PASS" starttime="20230421 13:31:00.645" endtime="20230421 13:31:00.645"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${EMAIL_TESTE}</arg>
+<arg>${palavra_aleatoria}@emailteste.com</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230421 13:31:00.646" level="INFO">${EMAIL_TESTE} = zgoy@emailteste.com</msg>
+<status status="PASS" starttime="20230421 13:31:00.645" endtime="20230421 13:31:00.646"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${EMAIL_TESTE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230421 13:31:00.646" level="INFO">zgoy@emailteste.com</msg>
+<status status="PASS" starttime="20230421 13:31:00.646" endtime="20230421 13:31:00.646"/>
+</kw>
+<status status="PASS" starttime="20230421 13:31:00.643" endtime="20230421 13:31:00.646"/>
+</kw>
+<kw name="Cadastrar o usuário criado na ServeRest" library="api_testing_usuarios">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=Fulano da Silva</arg>
+<arg>email=${EMAIL_TESTE}</arg>
+<arg>password=1234</arg>
+<arg>administrador=${TRUE}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230421 13:31:00.647" level="INFO">${body} = {'name': 'Fulano da Silva', 'email': 'zgoy@emailteste.com', 'password': '1234', 'administrador': True}</msg>
+<status status="PASS" starttime="20230421 13:31:00.646" endtime="20230421 13:31:00.647"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230421 13:31:00.647" level="INFO">{'name': 'Fulano da Silva', 'email': 'zgoy@emailteste.com', 'password': '1234', 'administrador': True}</msg>
+<status status="PASS" starttime="20230421 13:31:00.647" endtime="20230421 13:31:00.647"/>
+</kw>
+<kw name="Criar Sessão no ServeRest" library="api_testing_usuarios">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>alias=servRest</arg>
+<arg>url=https://Serverest.dev</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230421 13:31:00.648" level="INFO">Creating Session using : alias=servRest, url=https://Serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230421 13:31:00.647" endtime="20230421 13:31:00.648"/>
+</kw>
+<status status="PASS" starttime="20230421 13:31:00.647" endtime="20230421 13:31:00.648"/>
+</kw>
+<status status="PASS" starttime="20230421 13:31:00.646" endtime="20230421 13:31:00.648"/>
+</kw>
+<status status="PASS" starttime="20230421 13:31:00.642" endtime="20230421 13:31:00.648"/>
+</test>
+<status status="PASS" starttime="20230421 13:31:00.553" endtime="20230421 13:31:00.648"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Api Testing Usuarios">Api Testing Usuarios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

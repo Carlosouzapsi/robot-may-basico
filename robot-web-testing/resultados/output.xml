@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on darwin)" generated="20230412 18:46:46.630" rpa="false" schemaversion="3">
+<suite id="s1" name="Amazon Tests Gherkin Bdd" source="/Users/vntcaot/Documents/robot-framework/robot-web-testing/amazon_tests_gherkin_bdd.robot">
+<test id="s1-t1" name="Caso de teste 01 - Acesso ao menu &quot;Eletrônicos&quot;" line="9">
+<kw name="Abrir o navegador" library="amazon_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230412 18:46:46.753" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230412 18:46:46.753" endtime="20230412 18:46:48.143"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230412 18:46:48.143" endtime="20230412 18:46:48.599"/>
+</kw>
+<status status="PASS" starttime="20230412 18:46:46.753" endtime="20230412 18:46:48.599"/>
+</kw>
+<kw name="Dado que estou na home page da Amazon.com.br" library="amazon_resources">
+<kw name="Acessar a home do site da Amazon.com.br" library="amazon_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230412 18:46:48.600" level="INFO">Opening url 'http://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230412 18:46:48.600" endtime="20230412 18:46:55.733"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=${MENU_ELETRONICOS}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230412 18:46:55.733" endtime="20230412 18:46:55.749"/>
+</kw>
+<status status="PASS" starttime="20230412 18:46:48.600" endtime="20230412 18:46:55.749"/>
+</kw>
+<status status="PASS" starttime="20230412 18:46:48.600" endtime="20230412 18:46:55.749"/>
+</kw>
+<kw name="Quando acessar o menu &quot;Eletrônicos&quot;" library="amazon_resources">
+<kw name="Entrar no menu &quot;Eletrônicos&quot;" library="amazon_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=${MENU_ELETRONICOS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230412 18:46:55.749" level="INFO">Clicking element 'css=a[href*='/Eletronicos']'.</msg>
+<status status="PASS" starttime="20230412 18:46:55.749" endtime="20230412 18:46:56.510"/>
+</kw>
+<status status="PASS" starttime="20230412 18:46:55.749" endtime="20230412 18:46:56.510"/>
+</kw>
+<status status="PASS" starttime="20230412 18:46:55.749" endtime="20230412 18:46:56.510"/>
+</kw>
+<kw name="Então o título da página deve ficar &quot;Eletrônicos e Tecnologia | Amazon.com.br&quot;" library="amazon_resources">
+<kw name="Verificar se o titulo da página fica &quot;Eletrônicos e Tecnologia | Amazon.com.br&quot;" library="amazon_resources" sourcename="Verificar se o titulo da página fica &quot;${TITULO}&quot;">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>title=${TITULO}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230412 18:46:56.786" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230412 18:46:56.786" level="FAIL">Title should have been 'Eletrônicos e Tecnologia | Amazon.com.br' but was ''.</msg>
+<status status="FAIL" starttime="20230412 18:46:56.510" endtime="20230412 18:46:56.789"/>
+</kw>
+<status status="FAIL" starttime="20230412 18:46:56.510" endtime="20230412 18:46:56.789"/>
+</kw>
+<status status="FAIL" starttime="20230412 18:46:56.510" endtime="20230412 18:46:56.789"/>
+</kw>
+<doc>Esse site verifica o menu eletronicos do site da amazon.com.br
+E verifica categoria computadores e informática</doc>
+<tag>categorias</tag>
+<tag>menus</tag>
+<status status="FAIL" starttime="20230412 18:46:46.752" endtime="20230412 18:46:56.789">Title should have been 'Eletrônicos e Tecnologia | Amazon.com.br' but was ''.</status>
+</test>
+<doc>Essa suite testa o site da amazon.com.br</doc>
+<status status="FAIL" starttime="20230412 18:46:46.631" endtime="20230412 18:46:56.789"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">categorias</stat>
+<stat pass="0" fail="1" skip="0">menus</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Amazon Tests Gherkin Bdd">Amazon Tests Gherkin Bdd</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
